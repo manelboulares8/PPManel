@@ -5,7 +5,6 @@
   <div *ngIf="errorMessage" class="alert alert-danger">
     {{ errorMessage }}
   </div>
-
   <form (ngSubmit)="login()">
     <div class="form-group">
       <label for="email">Email</label>
@@ -15,6 +14,16 @@
     <div class="form-group">
       <label for="password">Mot de passe</label>
       <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <!-- Sélection du type d'utilisateur -->
+    <div class="form-group">
+      <label for="userType">Type d'utilisateur</label>
+      <select id="userType" class="form-control" [(ngModel)]="userType" name="userType" required>
+        <option value="" disabled selected>Choisissez un type d'utilisateur</option>
+        <option value="admin">Admin</option>
+        <option value="caissier">Caissier</option>
+      </select>
     </div>
 
     <button type="submit" class="btn btn-primary btn-block">Se connecter</button>

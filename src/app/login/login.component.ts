@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +9,20 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  userType: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private router: Router) {}
 
-  // Méthode pour gérer la soumission du formulaire de connexion
   login() {
-    if (this.email === 'user@example.com' && this.password === 'password123') {
-      this.authService.login();
-      this.router.navigate(['/home']); // Redirige vers la page d'accueil après connexion
+    if (this.email === 'admin@example.com' && this.password === 'admin' && this.userType === 'admin') {
+      // Redirection pour l'admin
+      this.router.navigate(['/admin-dashboard']);
+    } else if (this.email === 'caissier@example.com' && this.password === 'caissier' && this.userType === 'caissier') {
+      // Redirection pour le caissier
+      this.router.navigate(['/caissier-dashboard']);
     } else {
-      this.errorMessage = 'Identifiants incorrects. Veuillez réessayer.';
+      this.errorMessage = 'Identifiants ou type d\'utilisateur incorrects';
     }
   }
 }
