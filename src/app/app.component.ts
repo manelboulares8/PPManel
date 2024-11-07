@@ -8,7 +8,12 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public authService: AuthService, private router: Router) {}
+  isHomePage: boolean = true;
+  constructor(public authService: AuthService, private router: Router) {
+    this.router.events.subscribe((event) => {
+      this.isHomePage = this.router.url === '/'|| this.router.url === '/login'; 
+    });
+  }
 
   // Méthode pour déconnecter l'utilisateur
   logout() {

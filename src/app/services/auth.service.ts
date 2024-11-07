@@ -5,15 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   private loggedIn: boolean = false;
+  private role: string = '';  // Variable pour stocker le rôle de l'utilisateur
 
-  // Simule une connexion de l'utilisateur
-  login() {
+  // Simule une connexion de l'utilisateur avec attribution du rôle
+  login(role: string) {
     this.loggedIn = true;
+    this.role = role; // Définir le rôle lors de la connexion
   }
 
   // Simule la déconnexion de l'utilisateur
   logout() {
     this.loggedIn = false;
+    this.role = '';  // Réinitialiser le rôle lors de la déconnexion
   }
 
   // Vérifie si l'utilisateur est connecté
@@ -21,8 +24,8 @@ export class AuthService {
     return this.loggedIn;
   }
 
-  // Exemple de méthode pour obtenir le rôle de l'utilisateur
+  // Retourne le rôle de l'utilisateur
   getRole(): string {
-    return this.loggedIn ? 'user' : ''; // Modifiez selon votre logique (par exemple 'admin', 'user', etc.)
+    return this.role;
   }
 }
