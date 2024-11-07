@@ -1,0 +1,86 @@
+/* Style général de la navbar */
+.navbar {
+    background-color: #4caf50; /* Vert de la pharmacie */
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .navbar .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  .navbar .btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+  }
+  
+  /* Style de la page d'accueil */
+  .home-content {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    /* background-image: url('assets/background.jpg');  */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Style du bouton Commencer */
+  .btn-green {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-green:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Style de la classe highlight */
+  .highlight {
+    font-size: 3rem; /* Taille du texte plus grande */
+    font-weight: bold;
+    color: #ffffff; /* Couleur du texte en blanc */
+    text-transform: uppercase; /* Majuscules */
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4caf50, #2196f3); /* Dégradé de vert et bleu */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Animation d'agrandissement au survol */
+  .highlight:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Style de la classe description */
+  .description {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #000; /* Couleur du texte en noir */
+  }
+  
