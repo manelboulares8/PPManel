@@ -5,25 +5,42 @@
   <div *ngIf="errorMessage" class="alert alert-danger">
     {{ errorMessage }}
   </div>
-  <form (ngSubmit)="login()">
+
+  <form [formGroup]="myForm" (ngSubmit)="login()">
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required>
-    </div>
-
+      <input type="email" class="form-control" formControlName="email" required>
+    
+    <span *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].touched" class="text-danger">
+      Email est obligatoire
+    </span>
+    <span *ngIf="myForm.controls['email'].hasError('email') && myForm.controls['email'].touched" class="text-danger">
+      Email non valide
+    </span>
+</div>
     <div class="form-group">
       <label for="password">Mot de passe</label>
-      <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required>
-    </div>
-
+      <input type="password" id="password" class="form-control" formControlName="password" required>
+    
+    <span *ngIf="myForm.get('password')?.hasError('required') && myForm.get('password')?.touched" class="text-danger">
+      Le mot de passe est obligatoire.
+    </span>
+    <span *ngIf="myForm.get('password')?.hasError('minlength') && myForm.get('password')?.touched" class="text-danger">
+      Le mot de passe doit contenir au moins 7 caractères.
+    </span>
+    <span *ngIf="myForm.get('password')?.hasError('pattern') && myForm.get('password')?.touched" class="text-danger">
+      Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre.
+    </span>
+</div>
     <!-- Sélection du type d'utilisateur -->
     <div class="form-group">
       <label for="userType">Type d'utilisateur</label>
-      <select id="userType" class="form-control" [(ngModel)]="userType" name="userType" required>
+      <select id="userType" class="form-control" formControlName="userType" required>
         <option value="" disabled selected>Choisissez un type d'utilisateur</option>
         <option value="admin">Admin</option>
         <option value="caissier">Caissier</option>
       </select>
+    <span *ngIf="myForm.controls['userType'].hasError('required') && myForm.controls['userType'].touched" class="text-danger">Le champ role est obligatoire </span>
     </div>
 
     <button type="submit" class="btn btn-primary btn-block">Se connecter</button>

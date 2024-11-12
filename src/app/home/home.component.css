@@ -79,8 +79,9 @@
   font-weight:600;
 }
 button{
-  background-color: #a5e1a7;
-  text-decoration: solid;
+  background-color: #28a745;
+  border-color: #28a745;
+    text-decoration: solid;
   font-weight:500;
   align-self: center;
   justify-content: center;
@@ -91,4 +92,19 @@ button{
 }
 button:hover {
   background-color: #8ecf8b;  /* Change la couleur de fond quand on survole le bouton */
+}
+.admin-dashboard {
+  background: rgba(253, 253, 253, 0.5); /* Fond semi-transparent, ajustez selon vos besoins */
+  backdrop-filter: blur(10px); /* Ajoute un flou à l'arrière-plan */
+  border-radius: 8px; /* Bordure arrondie pour un style plus doux */
+  padding: 20px;
+  color: white; /* Texte en blanc pour un bon contraste */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

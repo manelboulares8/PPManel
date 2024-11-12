@@ -13,8 +13,8 @@
     </div>
 
     <!-- Affichage basé sur le rôle de l'utilisateur -->
-    <div *ngIf="isLoggedIn">
-      <div *ngIf="userRole === 'admin'">
+    <div *ngIf="isLoggedIn"  class="admin-dashboard">
+      <div *ngIf="userRole === 'admin'" >
         <h2>Bienvenue, Administrateur</h2>
         <p>Voici le tableau de bord de l'administrateur.</p>
       </div>
